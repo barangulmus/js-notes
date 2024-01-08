@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .ana {
+            opacity: 0;
+            position: absolute;
+            margin-left: 16% !important;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cards {
+            display: block;
+        }
+
+        .card {
+            display: inline-block;
+            margin-left: 8px;
+            margin-top: 8px;
+            width: 22%;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-grid gap-2 col-4 mx-auto">
+        <button class="btn btn-primary p-3 m-3" type="button" id="addnewcard-form">Add New Card</button>
+    </div>
+    <!-- /////////////////////////////////////////////// -->
+    <div class="ana d-grid gap-2 col-8 mx-auto mt-5 border p-3 bg-white border-primary border-3" id="ana"
+        style="border-radius: 10px;">
+        <div class="mb-3 bg-white">
+            <label for="card-header-input" class="form-label text-primary h5">Title</label>
+            <button type="button" class="btn btn danger bg-danger text-white float-end rounded-circle" id="closeforms"
+                style="margin-top: -10px;">X</button>
+            <input type="text" class="form-control border-warning" id="card-header-input" placeholder="This is a test">
+        </div>
+        <div class="mb-3 bg-white">
+            <label for="card-text-input" class="form-label  text-primary h5">Contents</label>
+            <textarea class="form-control border-warning" id="card-text-input" rows="3"
+                placeholder="blablabla"></textarea>
+        </div>
+        <div class="d-grid gap-2 col-4 mx-auto">
+            <button class="btn btn-warning p-3 border border-primary border-3" type="button" id="addnewcard">Add New
+                Card</button>
+        </div>
+    </div>
+    <!-- /////////////////////////////////////////////// -->
+
+    <div class="cards" id="cards">
+        
+    </div>
+    <script>
+        let addnewcards_button = document.getElementById("addnewcard-form").addEventListener("click", function () {
+            //Bu kod parçasi X butonuna basıldığında tetiklernir
+            document.getElementById("closeforms").addEventListener("click", function () {
+                    document.querySelector(".cards").style = "opacity:100%;"
+                    document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
+
+            })
+            //Bu kod, içinde bulunduğumuz click fonksiyonu çalıştığında arkaplanın opacitysini düşürerek form ekranını ortaya çıkarır.
+            document.querySelector(".cards").style = "opacity:30%;"
+            document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
+            //Altta bulunan kodda, doldurulan formdaki veriler altta bulunan buttona lik olunduğunda yeni bir kart oluşturmaya çalışır
+            let addnewcard = document.getElementById("addnewcard").addEventListener("click", function () {
+
+                const card_header = document.getElementById("card-header-input").value;
+                const card_text = document.getElementById("card-text-input").value;
+                const cards = document.getElementById("cards");
+                let card = `
+                <div class="card text-bg-dark mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">${card_header}</h5>
+                        <p class="card-text">${card_text}</p>
+                    </div>
+                </div>`;
+                document.querySelector(".cards").style = "opacity:100%;"
+                document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
+
+                cards.insertAdjacentHTML("afterbegin", card);
+            });
+        });
+    </script>
+</body>
+
+</html>
