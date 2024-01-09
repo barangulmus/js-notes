@@ -60,16 +60,17 @@
         
     </div>
     <script>
-        let addnewcards_button = document.getElementById("addnewcard-form").addEventListener("click", function () {
-            //Bu kod parçasi X butonuna basıldığında tetiklernir
+            let addnewcards_button = document.getElementById("addnewcard-form").addEventListener("click", function () {
+            //Bu kod, içinde bulunduğumuz click fonksiyonu çalıştığında arkaplanın opacitysini düşürerek form ekranını ortaya çıkarır.
+            document.querySelector(".cards").style = "opacity:30%;"
+            document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
+            });
+        //Bu kod parçasi X butonuna basıldığında tetiklernir
             document.getElementById("closeforms").addEventListener("click", function () {
                     document.querySelector(".cards").style = "opacity:100%;"
                     document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
 
-            })
-            //Bu kod, içinde bulunduğumuz click fonksiyonu çalıştığında arkaplanın opacitysini düşürerek form ekranını ortaya çıkarır.
-            document.querySelector(".cards").style = "opacity:30%;"
-            document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
+            });
             //Altta bulunan kodda, doldurulan formdaki veriler altta bulunan buttona lik olunduğunda yeni bir kart oluşturmaya çalışır
             let addnewcard = document.getElementById("addnewcard").addEventListener("click", function () {
 
@@ -88,7 +89,6 @@
 
                 cards.insertAdjacentHTML("afterbegin", card);
             });
-        });
     </script>
 </body>
 
