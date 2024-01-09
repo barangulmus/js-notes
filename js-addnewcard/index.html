@@ -9,8 +9,13 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
+        body {
+            background-image: linear-gradient(to right, #0099f7, #f11712);
+
+        }
+
         .ana {
-            opacity: 0;
+            opacity: 10;
             position: absolute;
             margin-left: 16% !important;
             pointer-events: none;
@@ -19,6 +24,8 @@
 
         .cards {
             display: block;
+            width: 86%;
+            margin-left: 8%;
         }
 
         .card {
@@ -27,6 +34,16 @@
             margin-top: 8px;
             width: 22%;
             height: 150px;
+        }
+
+        .form-check-group {
+            display: flex;
+        }
+
+        .form-check {
+            flex: 2;
+            margin-right: 10px;
+            /* İstenirse aralara boşluk ekleyebilirsiniz */
         }
     </style>
 </head>
@@ -49,7 +66,68 @@
             <textarea class="form-control border-warning" id="card-text-input" rows="3"
                 placeholder="blablabla"></textarea>
         </div>
-        <div class="d-grid gap-2 col-4 mx-auto">
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <label for="exampleColorInput" class="form-label text-primary h5">Background-Color</label>
+        <div class="form-check-group w-50">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosPrimary"
+                    value="option1" checked>
+                <label class="form-check-label" for="exampleRadiosPrimary">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelPrimaryColor"
+                        value="#0d6efd" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSecondary"
+                    value="option2">
+                <label class="form-check-label" for="exampleRadiosSecondary">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelSeondaryColor"
+                        value="#6c757d" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSuccess"
+                    value="option3">
+                <label class="form-check-label" for="exampleRadiosSuccess">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelSuccessColor"
+                        value="#198754" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosDanger"
+                    value="option4">
+                <label class="form-check-label" for="exampleRadiosDanger">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelDangerColor"
+                        value="#dc3545" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosWarning"
+                    value="option5">
+                <label class="form-check-label" for="exampleRadiosWarning">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelWarningColor"
+                        value="#ffc107" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosInfo"
+                    value="option6">
+                <label class="form-check-label" for="exampleRadiosInfo">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelInfoColor"
+                        value="#0dcaf0" style="pointer-events:none;">
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosSpecial"
+                    value="option7">
+                <label class="form-check-label" for="exampleRadiosSpecial">
+                    <input type="color" class="form-control form-control-color" id="radioNoLabelSpecialColor"
+                        value="#563d7c">
+                </label>
+            </div>
+        </div>
+        <!-- //////////////////////////////////////////////////////// -->
+        <div class="d-grid gap-2 col-4 mx-auto m-3">
             <button class="btn btn-warning p-3 border border-primary border-3" type="button" id="addnewcard">Add New
                 Card</button>
         </div>
@@ -57,38 +135,80 @@
     <!-- /////////////////////////////////////////////// -->
 
     <div class="cards" id="cards">
-        
+
     </div>
+    
     <script>
-            let addnewcards_button = document.getElementById("addnewcard-form").addEventListener("click", function () {
+        let backgroundcolor;
+        let backgroundcolorspecial;
+        function RadioColorControls() {
+            var bg_primary = document.getElementById("exampleRadiosPrimary");
+            var bg_secondary = document.getElementById("exampleRadiosSecondary");
+            var bg_success = document.getElementById("exampleRadiosSuccess");
+            var bg_danger = document.getElementById("exampleRadiosDanger");
+            var bg_warning = document.getElementById("exampleRadiosWarning");
+            var bg_info = document.getElementById("exampleRadiosInfo");
+            var bg_special = document.getElementById("exampleRadiosSpecial");
+
+            if (bg_primary.checked) {
+                backgroundcolor = "primary";
+            }
+             if (bg_secondary.checked) {
+                backgroundcolor = "secondary";
+            }
+            if (bg_success.checked) {
+                backgroundcolor = "success";
+            }
+            if (bg_danger.checked) {
+                backgroundcolor = "danger";
+            }
+            if (bg_warning.checked) {
+                backgroundcolor = "warning";
+            }
+            if (bg_info.checked) {
+                backgroundcolor = "info";
+            }
+            if (bg_special.checked) {
+                backgroundcolorspecial=bg_special.value;
+            }
+            else{
+                backgroundcolorspecial="";
+            }
+        }
+
+        let addnewcards_button = document.getElementById("addnewcard-form").addEventListener("click", function () {
             //Bu kod, içinde bulunduğumuz click fonksiyonu çalıştığında arkaplanın opacitysini düşürerek form ekranını ortaya çıkarır.
-            document.querySelector(".cards").style = "opacity:30%;"
+            document.querySelector(".cards").style = "opacity:30%;";
+
             document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
-            });
-        //Bu kod parçasi X butonuna basıldığında tetiklernir
-            document.getElementById("closeforms").addEventListener("click", function () {
-                    document.querySelector(".cards").style = "opacity:100%;"
-                    document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
+            document.getElementById("ana").classList.add("animate__animated animate__bounceIn animate__delay-2s");
 
-            });
             //Altta bulunan kodda, doldurulan formdaki veriler altta bulunan buttona lik olunduğunda yeni bir kart oluşturmaya çalışır
-            let addnewcard = document.getElementById("addnewcard").addEventListener("click", function () {
+        });
+        //Bu kod parçasi X butonuna basıldığında tetiklernir
+        document.getElementById("closeforms").addEventListener("click", function () {
+            document.querySelector(".cards").style = "opacity:100%;"
+            document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
 
-                const card_header = document.getElementById("card-header-input").value;
-                const card_text = document.getElementById("card-text-input").value;
-                const cards = document.getElementById("cards");
-                let card = `
-                <div class="card text-bg-dark mb-3">
+        });
+        let addnewcard = document.getElementById("addnewcard").addEventListener("click", function () {
+            RadioColorControls();
+            const card_header = document.getElementById("card-header-input").value;
+            const card_text = document.getElementById("card-text-input").value;
+            const cards = document.getElementById("cards");
+            let card = `
+                <div class="card mb-3 bg-${backgroundcolor}" style="background-color:${backgroundcolorspecial};">
                     <div class="card-body">
                         <h5 class="card-title">${card_header}</h5>
                         <p class="card-text">${card_text}</p>
                     </div>
                 </div>`;
-                document.querySelector(".cards").style = "opacity:100%;"
-                document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
+            document.querySelector(".cards").style = "opacity:100%;"
+            document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
 
-                cards.insertAdjacentHTML("afterbegin", card);
-            });
+            cards.insertAdjacentHTML("afterbegin", card);
+        });
+
     </script>
 </body>
 
