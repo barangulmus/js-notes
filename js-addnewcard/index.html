@@ -15,7 +15,7 @@
         }
 
         .ana {
-            opacity: 10;
+            opacity: 0;
             position: absolute;
             margin-left: 16% !important;
             pointer-events: none;
@@ -137,7 +137,7 @@
     <div class="cards" id="cards">
 
     </div>
-    
+
     <script>
         let backgroundcolor;
         let backgroundcolorspecial;
@@ -153,7 +153,7 @@
             if (bg_primary.checked) {
                 backgroundcolor = "primary";
             }
-             if (bg_secondary.checked) {
+            if (bg_secondary.checked) {
                 backgroundcolor = "secondary";
             }
             if (bg_success.checked) {
@@ -169,10 +169,10 @@
                 backgroundcolor = "info";
             }
             if (bg_special.checked) {
-                backgroundcolorspecial=bg_special.value;
+                backgroundcolorspecial = bg_special.value;
             }
-            else{
-                backgroundcolorspecial="";
+            if(!bg_special.checked){
+                backgroundcolorspecial = null;
             }
         }
 
@@ -196,13 +196,27 @@
             const card_header = document.getElementById("card-header-input").value;
             const card_text = document.getElementById("card-text-input").value;
             const cards = document.getElementById("cards");
-            let card = `
-                <div class="card mb-3 bg-${backgroundcolor}" style="background-color:${backgroundcolorspecial};">
+            let card;
+            if (backgroundcolorspecial == null && backgroundcolor.length>0) {
+                card = `
+                <div class="card mb-3 bg-${backgroundcolor}">
                     <div class="card-body">
                         <h5 class="card-title">${card_header}</h5>
                         <p class="card-text">${card_text}</p>
                     </div>
                 </div>`;
+            }
+            else if (backgroundcolorspecial.length>0) {
+                card = `
+                <div class="card mb-3" style="background-color:${backgroundcolorspecial};">
+                    <div class="card-body">
+                        <h5 class="card-title">${card_header}</h5>
+                        <p class="card-text">${card_text}</p>
+                    </div>
+                </div>`;
+            }
+            console.log(backgroundcolor +"bgcolor");
+            console.log(backgroundcolorspecial +"bgspecialcolor");
             document.querySelector(".cards").style = "opacity:100%;"
             document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
 
