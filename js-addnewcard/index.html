@@ -157,8 +157,8 @@
     <!-- /////////////////////////////////////////////// -->
 
     <div class="cards" id="cards">
-        <div class="card mb-3 bg-danger animate__bounceIn" id="card" >
-            <div class="card-body">
+        <div class="card mb-3 bg-danger animate__bounceIn" id="card">
+            <div class="card-body"  style="position: relative;">
                 <h5 class="card-title">abcd</h5>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
@@ -172,11 +172,14 @@
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                 </svg>
                 </span>
-                <svg style="vertical-align:bottom;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
+                <div class="animate__animated animate__shakeY animate__slower animate__infinit infinite" style="position: absolute; top: 118px; margin-left:40%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
                   </svg>
-                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia modi quis magnam odit corporis! Reiciendis dolores consequatur at, vitae magnam, voluptatem eveniet vero maxime quos totam quibusdam similique cupiditate. Magnam!
-
+                </div>
+                
+                <p class="card-text">
+                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                 </p>
             </div>
         </div>
@@ -241,7 +244,12 @@
             const cards = document.getElementById("cards");
             console.log(cards);
             let card;
-            if (backgroundcolorspecial == null && backgroundcolor.length > 0) {
+            if (backgroundcolorspecial == null && backgroundcolor.length > 100) {
+                if(card_text.length>100){
+                    card_text=card_text.substring(0,100);
+                    console.log(card_text);
+                    
+                }
                 card = `
                 <div class="card mb-3 bg-${backgroundcolor} animate__bounceIn" id="card" >
                     <div class="card-body">
