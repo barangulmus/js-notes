@@ -210,7 +210,6 @@
         document.getElementById("closeforms").addEventListener("click", function () {
             document.querySelector(".cards").style = "opacity:100%;"
             document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
-
         });
         let addnewcard = document.getElementById("addnewcard").addEventListener("click", function () {
             RadioColorControls();
@@ -268,28 +267,18 @@
             document.querySelector(".cards").style = "opacity:100%;"
             document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
             cards.insertAdjacentHTML("afterbegin", card);
-
         });
         document.addEventListener("click", function (event) {
             // Tıklanan elementin bir delete butonu olup olmadığını kontrol et
             if (event.target.closest('.card #trash')) {
                 // Tıklanan delete butonuna ait olan kartı bul
                 var cardToDelete = event.target.closest('.card');
-
                 // Kart varsa, onu sil
                 if (cardToDelete) {
                     cardToDelete.remove();
                 }
             }
         });
-        //if(document.getElementById.card_text.value.length>82){
-        //     
-        //}
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         document.addEventListener("click", function (event) {
             // Tıklanan elementin bir refresh butonu olup olmadığını kontrol et
             if (event.target.closest('.card #pencil')) {
@@ -297,9 +286,6 @@
                 var cardToRefresh = event.target.closest('.card');
                 var card_header_refresh = cardToRefresh.querySelector("#card-header-input");
                 var card_text_refresh = cardToRefresh.querySelector("#card-text-input");
-
-                //let card_text = document.getElementById("card-text-input");
-                //let cards = document.getElementById("cards");
                 // Kart varsa, onu yenile
                 if (cardToRefresh) {
                     document.querySelector(".cards").style = "opacity:30%;";
@@ -308,7 +294,6 @@
                     const card_text = document.getElementById("card-text-input");
                     document.getElementById("addnewcard").id="refreshtocard";
                     document.getElementById("refreshtocard").addEventListener("click", function () {
-                        //RadioColorControls();
                         card_header_refresh.value = card_header;
                         card_text_refresh.value = card_text;
                         document.querySelector(".cards").style = "opacity:100%;"
