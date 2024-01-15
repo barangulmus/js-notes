@@ -304,11 +304,15 @@
                 if (cardToRefresh) {
                     document.querySelector(".cards").style = "opacity:30%;";
                     document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
-
-                    document.getElementById("addnewcard").addEventListener("click", function () {
-                        RadioColorControls();
-                        const card_header = document.getElementById("card-header-input");
-
+                    const card_header = document.getElementById("card-header-input");
+                    const card_text = document.getElementById("card-text-input");
+                    document.getElementById("addnewcard").id="refreshtocard";
+                    document.getElementById("refreshtocard").addEventListener("click", function () {
+                        //RadioColorControls();
+                        card_header_refresh.value = card_header;
+                        card_text_refresh.value = card_text;
+                        document.querySelector(".cards").style = "opacity:100%;"
+                        document.getElementById("ana").style = "opacity: 0; pointer-events:none;";
                         //burada yapılacak işlem, card içinde yazılı olan value değerine bizim yukarıda refresh ile tanımladığımız kısım atanacak ve çarpı butonun basılmış gibi herşey düzelecek, yani insertAdjaventElement olayı gerçekleşmeyecek.
                     });
                 }
