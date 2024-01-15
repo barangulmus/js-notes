@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
-            background-image: linear-gradient(to right, #0099f7, #f11712);
+            background-image: linear-gradient(to right, #000000, #FD367E);
 
         }
 
@@ -69,7 +69,7 @@
     </style>
 </head>
 
-<body>
+<body>  
     <div class="d-grid gap-2 col-4 mx-auto">
         <button class="btn btn-primary p-3 m-3" type="button" id="addnewcard-form" style="display: inline-block;">Add
             New Card</button>
@@ -157,32 +157,7 @@
     <!-- /////////////////////////////////////////////// -->
 
     <div class="cards" id="cards">
-        <div class="card mb-3 bg-danger animate__bounceIn" id="card">
-            <div class="card-body"  style="position: relative;">
-                <h5 class="card-title">abcd</h5>
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                    </svg>    
-                </span>
-                <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" id="pencil" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                </svg>
-                </span>
-                <div class="animate__animated animate__shakeY animate__slower animate__infinit infinite" style="position: absolute; top: 118px; margin-left:40%;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-down text-white" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                  </svg>
-                </div>
-                
-                <p class="card-text">
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                </p>
-            </div>
-        </div>
+        
     </div>
 
     <script>
@@ -245,11 +220,11 @@
             console.log(cards);
             let card;
             if (backgroundcolorspecial == null && backgroundcolor.length > 100) {
-                if(card_text.length>100){
-                    card_text=card_text.substring(0,100);
-                    console.log(card_text);
-                    
-                }
+                //if (card_text.length > 100) {
+                //    card_text = card_text.substring(0, 100);
+                //    console.log(card_text);
+                //
+                //}
                 card = `
                 <div class="card mb-3 bg-${backgroundcolor} animate__bounceIn" id="card" >
                     <div class="card-body">
@@ -307,71 +282,77 @@
                 }
             }
         });
-        if(document.getElementById.card_text.value.length>82){
-             
-        }
-        // document.addEventListener("click", function (event) {
-        //     // Tıklanan elementin bir refresh butonu olup olmadığını kontrol et
-        //     if (event.target.closest('.card #pencil')) {
-        //         // Tıklanan delete butonuna ait olan kartı bul
-        //         var cardToRefresh = event.target.closest('.card');
+        //if(document.getElementById.card_text.value.length>82){
+        //     
+        //}
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //burdan devam
+        document.addEventListener("click", function (event) {
+            // Tıklanan elementin bir refresh butonu olup olmadığını kontrol et
+            if (event.target.closest('.card #pencil')) {
+                // Tıklanan delete butonuna ait olan kartı bul
+                var cardToRefresh = event.target.closest('.card');
 
-        //         // Kart varsa, onu yenile
-        //         if (cardToRefresh) {
-        //             document.querySelector(".cards").style = "opacity:30%;";
+                // Kart varsa, onu yenile
+                if (cardToRefresh) {
+                    document.querySelector(".cards").style = "opacity:30%;";
 
-        //             document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
+                    document.getElementById("ana").style = "opacity: 1; pointer-events:all;";
 
-        //             RadioColorControls();
-        //             let card_header = document.getElementById("card-header-input");
-        //             let card_text = document.getElementById("card-text-input");
-        //             let cards = document.getElementById("cards");
-        //             let card;
-        //             if (backgroundcolorspecial == null && backgroundcolor.length > 0) {
-        //                 card = `
-        //         <div class="card mb-3 bg-${backgroundcolor} animate__bounceIn" id="card" >
-        //             <div class="card-body">
-        //                 <h5 class="card-title">${card_header.value}</h5>
-        //                 <span>
-        //                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
-        //                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-        //                     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-        //                     </svg>    
-        //                 </span>
-        //                 <span>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" id="pencil" viewBox="0 0 16 16">
-        //                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-        //                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-        //                 </svg>
-        //                 </span>
-        //                 <p class="card-text">${card_text.value}</p>
-        //             </div>
-        //         </div>`;
-        //             } else if (backgroundcolorspecial.length > 0) {
-        //                 card = `
-        //         <div class="card mb-3 animate__bounceIn" id="card" style="background-color:${backgroundcolorspecial};">
-        //             <div class="card-body">
-        //                 <h5 class="card-title">${card_header.value}</h5>
-        //                 <span>
-        //                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
-        //                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-        //                     <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-        //                     </svg>    
-        //                 </span>
-        //                 <span>
-        //                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" id="pencil" viewBox="0 0 16 16">
-        //                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-        //                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-        //                 </svg>
-        //                 </span>
-        //                 <p class="card-text">${card_text.value}</p>
-        //             </div>
-        //         </div>`;
-        //             }
-                    
-        //         }
-        //     }
-        // });
+                    RadioColorControls();
+                    let card_header = document.getElementById("card-header-input");
+                    let card_text = document.getElementById("card-text-input");
+                    let cards = document.getElementById("cards");
+                    let card;
+                    if (backgroundcolorspecial == null && backgroundcolor.length > 0) {
+                        card = `
+                <div class="card mb-3 bg-${backgroundcolor} animate__bounceIn" id="card" >
+                    <div class="card-body">
+                        <h5 class="card-title">${card_header.value}</h5>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>    
+                        </span>
+                        <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" id="pencil" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                        </svg>
+                        </span>
+                        <p class="card-text">${card_text.value}</p>
+                    </div>
+                </div>`;
+                    } else if (backgroundcolorspecial.length > 0) {
+                        card = `
+                <div class="card mb-3 animate__bounceIn" id="card" style="background-color:${backgroundcolorspecial};">
+                    <div class="card-body">
+                        <h5 class="card-title">${card_header.value}</h5>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" id="trash">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                            </svg>    
+                        </span>
+                        <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil-square" id="pencil" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                        </svg>
+                        </span>
+                        <p class="card-text">${card_text.value}</p>
+                    </div>
+                </div>`;
+                    }
+
+                }
+            }
+        });
     </script>
 </body>
 
